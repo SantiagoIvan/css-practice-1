@@ -127,3 +127,38 @@ un margen al último hijo cosa que no quiero porque no hay nada a su lado */
   background-color: var(--color-button-secondary-text);
   color: var(--color-button-secondary-bg);
 }
+
+@media (width < 1100px) {
+  .header__link {
+    font-size: 25px;
+  }
+  .nav__list-item {
+    font-size: 15px;
+  }
+  .header svg {
+    height: 20px;
+    width: 24px;
+  }
+}
+@media (width < 950px) {
+  .button {
+    height: 80px;
+    padding: 0 20px;
+    font-size: 25px;
+  }
+}
+@media (width < 710px) {
+  .button {
+    height: 65px;
+    padding: 0 15px;
+    font-size: 20px;
+  }
+}
+@media (width < 620px) {
+  .button {
+    height: 60px;
+    padding: 0px;
+    font-size: 20px;
+    width: 200px;
+  }
+}

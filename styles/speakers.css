@@ -46,16 +46,16 @@ Con grid puedo setear la cantidad de columnas a 2, y asi puedo achicar un poco l
   margin-top: 36px;
   margin-bottom: 20px;
 }
-.speaker_company {
+.speaker__company {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 32px;
 }
-.speaker_bio {
+.speaker__bio {
   font-size: 24px;
 }
-.speaker_company,
-.speaker_bio {
+.speaker__company,
+.speaker__bio {
   color: var(--color-secondary-text);
 }
 
@@ -67,10 +67,33 @@ o sino
 */
 @media (width < 1100px) {
   /* como 2 cartas por fila es too much, cambio el layout para que sea una sola carta */
-  .speaker__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-column-gap: 300px;
-    grid-row-gap: 30px;
+  .main {
+    padding: 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .speakers .main__heading {
+    text-align: center;
+    font-size: 50px;
+  }
+  .speakers .speaker__list {
+    display: flex;
+    flex-direction: column;
+  }
+  .speaker__wrapper {
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .speaker__name {
+    font-size: 28px;
+  }
+  .speaker__company {
+    font-size: 18px;
+  }
+  .speaker__bio {
+    font-size: 18px;
   }
 }

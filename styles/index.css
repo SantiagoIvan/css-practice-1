@@ -8,8 +8,9 @@
 /* Estos headings son especificos para el homepage, pero el nombre puede ser un tanto confuso, porque no es muy especifico.
 Entonces para hacerlo mas expresivo, se le puede agregar una clase al body que contiene todo con el nombre de la pagina */
 .home .main__heading {
-  font-size: 128px;
+  font-size: 110px;
   font-weight: bold;
+  margin-top: 70px;
 }
 .home .main__subheading {
   font-size: 40px;
@@ -27,4 +28,43 @@ Entonces para hacerlo mas expresivo, se le puede agregar una clase al body que c
 }
 .button--main:hover .main-button-icon path {
   fill: var(--color-button-primary-bg) !important;
+}
+@media (width < 1100px) {
+  .home .main__heading {
+    font-size: 70px;
+  }
+}
+@media (width < 950px) {
+  .home .main__heading {
+    font-size: 55px;
+  }
+  .home .main__subheading {
+    font-size: 35px;
+  }
+  .home .main-button-icon {
+    height: 28px;
+    width: 28px;
+  }
+}
+
+@media (width < 710px) {
+  .home .main-button-icon {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@media (width < 620px) {
+  .home .main__heading {
+    font-size: 40px;
+  }
+  .home .main__subheading {
+    font-size: 24px;
+  }
+  .home .button-container {
+    flex-direction: column;
+  }
+  .home .button--main {
+    margin-bottom: 20px;
+  }
 }
