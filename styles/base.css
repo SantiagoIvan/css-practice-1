@@ -36,6 +36,9 @@ svg,
 button {
   cursor: pointer;
 }
+.close-menu {
+  display: none;
+}
 .shopping-cart-icon--secondary g path {
   fill: var(--color-primary);
 }
@@ -127,7 +130,12 @@ un margen al último hijo cosa que no quiero porque no hay nada a su lado */
   background-color: var(--color-button-secondary-text);
   color: var(--color-button-secondary-bg);
 }
-
+.menu {
+  /* visibility: hidden; 
+  no sirve, porque lo esconde pero sigue estando en el DOM, y si es asi, me caga el grid de 3 columnas  
+  */
+  display: none;
+}
 @media (width < 1100px) {
   .header__link {
     font-size: 25px;
@@ -138,6 +146,7 @@ un margen al último hijo cosa que no quiero porque no hay nada a su lado */
   .header svg {
     height: 20px;
     width: 24px;
+    padding: 0 0px;
   }
 }
 @media (width < 950px) {
@@ -155,10 +164,61 @@ un margen al último hijo cosa que no quiero porque no hay nada a su lado */
   }
 }
 @media (width < 620px) {
+  /* escondo los nabvlinks para que aparezca el menu y seguir teniendo 3 columnas y nada se rompa del grid */
   .button {
     height: 60px;
     padding: 0px;
     font-size: 20px;
     width: 200px;
+  }
+  .menu--visible {
+    display: block;
+  }
+  .menu path {
+    fill: var(--color-primary-text);
+  }
+  .close-menu path {
+    fill: var(--color-primary-text);
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 34px 1fr 34px;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    grid-template-areas: "menu logo shopping-cart"; /* forma para nombrar a las parcelas que se forman*/
+    padding: 0 20px;
+  }
+
+  /* la idea es que el nav esta fuera de la pantalla y que transisione cuando le des click al menu.
+  Cuando alguien clickea el menu, se le agrega la clase "--visible" para que haga la transición
+  */
+  .nav {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-primary); /* para que tape el fondo */
+    z-index: 1; /* para que tape se muestre encima de todo */
+    top: 60px; /* altura del nav, para que se muestre abajo */
+    left: -100%; /* para que este totalmente a un costado */
+    transition: left 0.2s linear;
+  }
+  .nav--visible {
+    left: 0;
+  }
+  .menu--visible,
+  .close-menu--visible {
+    display: block;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+  }
+  .nav__list-item {
+    margin-right: 0px;
+    font-size: 30px;
+    font-weight: bold;
   }
 }
