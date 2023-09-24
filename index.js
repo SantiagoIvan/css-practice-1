@@ -1,6 +1,6 @@
-const menu = document.getElementById("menuId");
-const nav = document.getElementById("navId");
-const closeMenu = document.getElementById("closeMenuId");
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+const closeMenu = document.getElementById("close");
 menu.addEventListener("click", () => {
   /* 
         1- mostrar el menu desplegable

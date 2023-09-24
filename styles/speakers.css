@@ -97,3 +97,14 @@ o sino
     font-size: 18px;
   }
 }
+@media (width < 620px) {
+  .menu path {
+    fill: var(--color-primary);
+  }
+  .close-menu path {
+    fill: var(--color-primary);
+  }
+  .nav {
+    background-color: var(--color-primary-text);
+  }
+}
