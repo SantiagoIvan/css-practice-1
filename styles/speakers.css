@@ -1,0 +1,76 @@
+@import "base.css";
+.speakers .main__heading {
+  font-size: 68px;
+}
+
+/* tambien se puede resolver con grid sin poner la cantidad de filas.
+Con grid puedo setear la cantidad de columnas a 2, y asi puedo achicar un poco las cartas
+*/
+/* .speaker__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} */
+
+.speaker__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 300px;
+  grid-row-gap: 30px;
+}
+
+.speaker__wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  /* los textos se van a achicar hasta la altura de la imagen */
+}
+
+.speaker__wrapper > * {
+  margin: 20px 0;
+}
+.speaker__image {
+  height: 310px;
+  width: 310px;
+  object-fit: cover;
+  /* con el cover me quedan casi todas las imagenes bien menos un par que quedan con la cabeza cortada.
+  a esas fotos les agrego una propiedad mas, que son las que no cumplen con las dimensiones ideales */
+}
+.speaker__image--top {
+  object-position: top;
+}
+
+.speaker__name {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+.speaker_company {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+.speaker_bio {
+  font-size: 24px;
+}
+.speaker_company,
+.speaker_bio {
+  color: var(--color-secondary-text);
+}
+
+/* cuando la pantalla sea menor a 1100, se aplican los siguientes estilos */
+/*
+@media (max-width: 1100px)
+o sino
+@media (width < 1100px). Esta opción es más facil de leer
+*/
+@media (width < 1100px) {
+  /* como 2 cartas por fila es too much, cambio el layout para que sea una sola carta */
+  .speaker__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 300px;
+    grid-row-gap: 30px;
+  }
+}

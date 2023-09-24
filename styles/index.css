@@ -1,0 +1,30 @@
+/* @font-face {
+    font-family: Inter;
+    src: url();
+} Si me bajo los estilos y los pongo en la carpeta "fonts", los creo de esta forma. Si uso los CDN de google, tiro directamente los links en el <head>.*/
+
+@import "base.css";
+
+/* Estos headings son especificos para el homepage, pero el nombre puede ser un tanto confuso, porque no es muy especifico.
+Entonces para hacerlo mas expresivo, se le puede agregar una clase al body que contiene todo con el nombre de la pagina */
+.home .main__heading {
+  font-size: 128px;
+  font-weight: bold;
+}
+.home .main__subheading {
+  font-size: 40px;
+}
+.home .button-container {
+  display: flex;
+  margin-top: 100px;
+}
+
+.main-button-icon {
+  vertical-align: middle;
+  /* alinio el icono verticalmente al box al cual pertenece. Yo antes lo que hacia era hacer que el
+  boton tenga un display flex y poner un margen y alinear todo asi, pero estaría usando flexbox en absolutamente todo.
+  Es una mejor practica usar esta propiedad que se encarga de solucionar eso, además es más simple */
+}
+.button--main:hover .main-button-icon path {
+  fill: var(--color-button-primary-bg) !important;
+}
