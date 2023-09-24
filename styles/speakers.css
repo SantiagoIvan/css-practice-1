@@ -107,4 +107,10 @@ o sino
   .nav {
     background-color: var(--color-primary-text);
   }
+  .body-no-scroll {
+    overflow: hidden;
+    /* todo el contenido que está fuera del viewport y que pertenece al body en este caso, sera escondido.
+    Esto me va a bloquear el scroll cuando tenga el menu abierto
+    */
+  }
 }
